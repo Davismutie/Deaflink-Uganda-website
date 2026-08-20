@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deaf Link Uganda — For the Advancement of Deaf People</title>
+<meta name="description" content="Deaf Link Uganda (DLU) promotes the welfare, education, and economic empowerment of Deaf and hard-of-hearing people in Uganda.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16233d;
+    --navy-2:#1f3358;
+    --cream:#faf5ea;
+    --paper:#fffdf8;
+    --terracotta:#c1392b;
+    --gold:#e0a545;
+    --charcoal:#241f1c;
+    --line:#e4dac6;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Work Sans',sans-serif;
+    color:var(--charcoal);
+    background:var(--cream);
+    line-height:1.6;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    margin:0 0 .4em;
+    color:var(--navy);
+    letter-spacing:-.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+
+  /* signature arc motif — echoes the red arrow encircling the triangle in the DLU logo */
+  .arc{
+    display:inline-block;
+    width:64px;height:14px;
+    margin-bottom:18px;
+    background:none;
+  }
+  .arc svg{width:100%;height:100%;}
+
+  /* header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy);
+    color:#f4ede0;
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;max-width:1140px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;}
+  .brand-mark{
+    width:34px;height:34px;border-radius:50%;
+    background:var(--terracotta);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:700;color:#fff;font-size:15px;
+  }
+  .brand-name{font-family:'Fraunces',serif;font-weight:600;font-size:19px;letter-spacing:.01em;}
+  .brand-name span{display:block;font-family:'Work Sans',sans-serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+  nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0;}
+  nav a{
+    text-decoration:none;color:#e9e1d0;font-size:14.5px;font-weight:500;
+    padding:6px 0;border-bottom:2px solid transparent;
+  }
+  nav a:hover{border-bottom-color:var(--gold);color:#fff;}
+  .nav-cta{
+    background:var(--terracotta);color:#fff;padding:9px 18px;border-radius:var(--radius);
+    font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;
+  }
+  .menu-btn{display:none;background:none;border:none;color:#fff;font-size:22px;cursor:pointer;}
+
+  /* hero */
+  .hero{
+    background:var(--navy);
+    color:#f4ede0;
+    padding:64px 0 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;
+    max-width:1140px;margin:0 auto;padding:0 24px 0;
+  }
+  .eyebrow{
+    text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;
+    color:var(--gold);margin-bottom:16px;
+  }
+  .hero h1{
+    color:#fff;font-size:clamp(34px,5vw,52px);line-height:1.08;margin-bottom:20px;
+  }
+  .hero p.lede{font-size:17.5px;color:#d8cfbb;max-width:46ch;margin-bottom:30px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px;}
+  .btn{
+    display:inline-block;padding:13px 24px;border-radius:var(--radius);
+    text-decoration:none;font-weight:600;font-size:14.5px;
+  }
+  .btn-primary{background:var(--terracotta);color:#fff;}
+  .btn-primary:hover{background:#a72f22;}
+  .btn-ghost{border:1.5px solid #6d7a94;color:#f4ede0;}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+  .hero-image-wrap{position:relative;padding-top:20px;}
+  .hero-ring{
+    position:absolute;top:-24px;left:-24px;width:110%;height:110%;
+    border:2px solid var(--terracotta);border-radius:50%;
+    opacity:.35;
+  }
+  .hero-photo{
+    border-radius:var(--radius);
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
+    position:relative;z-index:2;
+    aspect-ratio:4/5;object-fit:cover;
+  }
+
+  /* facts strip */
+  .facts{background:var(--navy-2);color:#f4ede0;padding:30px 0;}
+  .facts-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+    max-width:1140px;margin:0 auto;padding:0 24px;
+  }
+  .fact b{
+    display:block;font-family:'Fraunces',serif;font-size:26px;color:var(--gold);font-weight:600;
+  }
+  .fact span{font-size:13px;color:#c9bfa9;}
+
+  section{padding:80px 0;}
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head p{color:#5a5148;font-size:16px;}
+  .eyebrow-line{
+    text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:600;
+    color:var(--terracotta);margin-bottom:10px;
+  }
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .about-grid p{color:#4a423a;margin-bottom:16px;}
+  .pillars{display:grid;gap:18px;margin-top:12px;}
+  .pillar{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 22px;
+  }
+  .pillar h3{font-size:17px;margin-bottom:6px;}
+  .pillar p{margin:0;font-size:14.5px;color:#5a5148;}
+
+  /* programmes */
+  .programmes{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .prog-card{background:var(--cream);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);}
+  .prog-card img{width:100%;height:190px;object-fit:cover;}
+  .prog-body{padding:22px 22px 26px;}
+  .prog-tag{font-size:11.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--terracotta);font-weight:600;margin-bottom:8px;}
+  .prog-card h3{font-size:19px;margin-bottom:8px;}
+  .prog-card p{font-size:14.5px;color:#5a5148;margin-bottom:14px;}
+  .prog-link{font-size:14px;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1.5px solid var(--gold);}
+  .advocacy-note{
+    margin-top:30px;background:var(--navy);color:#f4ede0;border-radius:var(--radius);
+    padding:26px 30px;display:flex;gap:20px;align-items:flex-start;
+  }
+  .advocacy-note .arc svg path,.advocacy-note .arc svg circle{stroke:var(--gold);}
+  .advocacy-note h3{color:#fff;font-size:16px;margin-bottom:6px;}
+  .advocacy-note p{margin:0;color:#cdc3ac;font-size:14.5px;}
+
+  /* language section */
+  .language{
+    background:var(--navy);color:#f4ede0;
+  }
+  .lang-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+  .lang-grid h2{color:#fff;}
+  .lang-grid p{color:#d8cfbb;margin-bottom:18px;}
+  .video-frame{
+    border-radius:var(--radius);overflow:hidden;border:1px solid #33456a;
+    aspect-ratio:16/9;background:#0e1526;
+  }
+  .video-frame video, .video-frame iframe{width:100%;height:100%;display:block;border:0;}
+
+  /* news */
+  .news-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;}
+  .news-feature img{border-radius:var(--radius);width:100%;height:280px;object-fit:cover;margin-bottom:18px;}
+  .news-feature h3{font-size:22px;}
+  .news-feature p{color:#5a5148;}
+  .news-side{display:flex;flex-direction:column;gap:20px;}
+  .news-item{
+    display:flex;gap:14px;padding-bottom:20px;border-bottom:1px solid var(--line);
+  }
+  .news-item img{width:88px;height:88px;object-fit:cover;border-radius:var(--radius);flex-shrink:0;}
+  .news-item h4{margin:0 0 4px;font-size:15px;font-family:'Fraunces',serif;color:var(--navy);}
+  .news-item p{margin:0;font-size:13.5px;color:#6b6156;}
+
+  /* get involved */
+  .involve{background:var(--terracotta);color:#fff;}
+  .involve-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .involve h2{color:#fff;}
+  .involve .section-head p{color:#f6d9d0;}
+  .involve-card{
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);
+    border-radius:var(--radius);padding:26px;
+  }
+  .involve-card h3{color:#fff;font-size:18px;margin-bottom:8px;}
+  .involve-card p{color:#f6d9d0;font-size:14.5px;margin-bottom:16px;}
+  .involve-card a{
+    font-weight:600;color:#fff;text-decoration:none;border-bottom:1.5px solid #fff;font-size:14px;
+  }
+
+  /* footer */
+  footer{background:#0f1830;color:#a9a190;padding:56px 0 28px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px;}
+  .foot-brand{color:#f4ede0;font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin-bottom:10px;}
+  .foot-grid p{font-size:14px;line-height:1.7;}
+  .foot-col h4{color:#f4ede0;font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;}
+  .foot-col ul{list-style:none;margin:0;padding:0;}
+  .foot-col li{margin-bottom:10px;font-size:14px;}
+  .foot-col a{text-decoration:none;color:#a9a190;}
+  .foot-col a:hover{color:var(--gold);}
+  .foot-bottom{
+    border-top:1px solid #24304f;padding-top:22px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;
+  }
+  .social-row{display:flex;gap:14px;}
+  .social-row a{
+    width:32px;height:32px;border:1px solid #3a4770;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:12px;
+  }
+
+  @media (max-width:860px){
+    nav{display:none;}
+    .menu-btn{display:block;}
+    .hero-grid,.about-grid,.lang-grid,.news-grid{grid-template-columns:1fr;}
+    .facts-grid{grid-template-columns:repeat(2,1fr);row-gap:24px;}
+    .prog-grid,.involve-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    .hero-ring{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a class="brand" href="#top">
+      <span class="brand-mark">DLU</span>
+      <span class="brand-name">Deaf Link Uganda<span>For the Advancement of Deaf People</span></span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#programmes">Programmes</a></li>
+        <li><a href="#language">Sign Language</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#involved">Get Involved</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#involved">Support DLU</a>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Kampala, Uganda · Founded 2007</div>
+      <h1>Deaf people in Uganda deserve full access — to education, work, and community.</h1>
+      <p class="lede">Deaf Link Uganda promotes the welfare of Deaf and hard-of-hearing people through education, livelihoods, and business enterprise programmes rooted in the social model of deafness — recognising each person's uniqueness and potential.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#involved">Support Our Work</a>
+        <a class="btn btn-ghost" href="#language">Learn Basic UgSL</a>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <div class="hero-ring"></div>
+      <img class="hero-photo" src="https://www.deaflinkuganda.org/wp-content/uploads/2025/07/About-DLU.jpg" alt="Deaf Link Uganda community members together">
+    </div>
+  </div>
+  <div class="facts">
+    <div class="facts-grid">
+      <div class="fact"><b>2007</b><span>Founded as a community-based organisation</span></div>
+      <div class="fact"><b>2017</b><span>Registered as a national NGO</span></div>
+      <div class="fact"><b>3</b><span>Core programme areas: Education, Livelihoods, Business</span></div>
+      <div class="fact"><b>0.35%</b><span>Share of Uganda's population who are Deaf, per USL recognition data</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="eyebrow-line">Who we are</div>
+        <span class="arc"><svg viewBox="0 0 64 14"><path d="M2 10 Q 32 -6 62 10" stroke="#c1392b" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>
+        <h2>Our name signifies connection.</h2>
+        <p>Deaf Link Uganda (DLU) was founded in October 2007 by Nassozi B. Kiyaga, beginning as a community-based organisation working with Deaf and hard-of-hearing people in Uganda's Central region. In 2017 it was upgraded to a national NGO to widen its reach.</p>
+        <p>DLU focuses on the <strong>social model of deafness</strong>, recognising the uniqueness and potential of each individual. Our name signifies our desire to link Deaf and hard-of-hearing people across Uganda, Africa, and the world — connections that celebrate human diversity and unify Deaf and hearing communities.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Our Vision</h3>
+          <p>Promote inclusion and enable Deaf and hard-of-hearing people to realise their full potential so as to lead productive and dignified lives.</p>
+        </div>
+        <div class="pillar">
+          <h3>Our Mission</h3>
+          <p>Create access to education, economic, social and cultural opportunities that advance the welfare of Deaf and hard-of-hearing people in Uganda.</p>
+        </div>
+        <div class="pillar">
+          <h3>Our Logo</h3>
+          <p>The triangle represents a Deaf child rising from a strong, nurturing foundation of family and community. The encircling arrow is the link that connects us all as one human race.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="programmes" id="programmes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-line">What we do</div>
+      <h2>Three programmes, one cross-cutting commitment.</h2>
+      <p>Cultural and socio-economic barriers keep many Deaf Ugandans from participating as equal citizens. DLU responds with three core programmes — with Deaf Rights &amp; Advocacy woven through all of them.</p>
+    </div>
+    <div class="prog-grid">
+      <div class="prog-card">
+        <img src="https://www.deaflinkuganda.org/wp-content/uploads/2025/07/DLU2-400x250.jpg" alt="Education programme">
+        <div class="prog-body">
+          <div class="prog-tag">Education</div>
+          <h3>Closing the access gap</h3>
+          <p>Uganda Sign Language (USL) was recognised as the Deaf community's official language in 1995, yet an estimated 80% of Deaf children in Uganda are still denied full access to education. DLU works to change that.</p>
+          <a class="prog-link" href="https://www.deaflinkuganda.org/education/">Read more →</a>
+        </div>
+      </div>
+      <div class="prog-card">
+        <img src="https://www.deaflinkuganda.org/wp-content/uploads/2025/07/1-1024x768-1.jpg" alt="Business enterprise programme">
+        <div class="prog-body">
+          <div class="prog-tag">Business Enterprise</div>
+          <h3>Economic self-reliance</h3>
+          <p>Supporting skilled Deaf youth and adults into self-employment and enterprise, including the Deaf Business Group in Mityana set up to secure employment for skilled Deaf youth.</p>
+          <a class="prog-link" href="https://www.deaflinkuganda.org/business-enterprise/">Read more →</a>
+        </div>
+      </div>
+      <div class="prog-card">
+        <img src="https://www.deaflinkuganda.org/wp-content/uploads/2025/07/3-1024x576-1-400x250.jpg" alt="Livelihoods programme">
+        <div class="prog-body">
+          <div class="prog-tag">Livelihoods</div>
+          <h3>Reaching rural communities</h3>
+          <p>Improving the lives and welfare of Deaf people, their families, and communities — particularly in remote rural areas where marginalisation and poverty are most common.</p>
+          <a class="prog-link" href="https://www.deaflinkuganda.org/livelihoods/">Read more →</a>
+        </div>
+      </div>
+    </div>
+    <div class="advocacy-note">
+      <span class="arc"><svg viewBox="0 0 64 14"><path d="M2 10 Q 32 -6 62 10" stroke="#e0a545" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span>
+      <div>
+        <h3>Deaf Rights &amp; Advocacy — cutting across every programme</h3>
+        <p>DLU works within Uganda's national disability movement to challenge stigma, raise awareness, and advocate for accessible services — joining the Uganda National Association of the Deaf each year for International Deaf Awareness Week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="language" id="language">
+  <div class="wrap">
+    <div class="lang-grid">
+      <div>
+        <div class="eyebrow-line" style="color:var(--gold)">Uganda Sign Language</div>
+        <h2>Learn a few signs. Build a connection.</h2>
+        <p>This short video introduces basic Uganda Sign Language (UgSL) signs to help you start communicating with the Deaf community — learn, practice, and build connection one sign at a time.</p>
+        <a class="btn btn-primary" href="https://www.deaflinkuganda.org/wp-content/uploads/2025/07/Sign-DLU.mp4">Watch the UgSL introduction</a>
+      </div>
+      <div class="video-frame">
+        <video controls preload="none" poster="https://www.deaflinkuganda.org/wp-content/uploads/2025/07/DLU2-400x250.jpg">
+          <source src="https://www.deaflinkuganda.org/wp-content/uploads/2025/07/Sign-DLU.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-line">From the field</div>
+      <h2>News &amp; stories</h2>
+    </div>
+    <div class="news-grid">
+      <div class="news-feature">
+        <img src="https://www.deaflinkuganda.org/wp-content/uploads/2026/03/Visitors-Articles-400x250.jpg" alt="My Journey with Deaf Link Uganda">
+        <div class="eyebrow-line">Featured</div>
+        <h3>My Journey with Deaf Link Uganda</h3>
+        <p>A first-person account from within DLU's Livelihoods programme — set up to improve the lives and welfare of Deaf people, their families, and communities in remote rural areas where marginalisation and poverty are commonly experienced.</p>
+        <a class="prog-link" href="https://www.deaflinkuganda.org/my-journey-with-deaf-link-uganda/">Read the full story →</a>
+      </div>
+      <div class="news-side">
+        <div class="news-item">
+          <img src="https://www.deaflinkuganda.org/wp-content/uploads/2025/07/3-1024x576-1-400x250.jpg" alt="Livelihoods">
+          <div>
+            <h4>Livelihoods in rural Uganda</h4>
+            <p>Improving welfare for Deaf people and families outside urban centres.</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <img src="https://www.deaflinkuganda.org/wp-content/uploads/2025/07/DLU2-400x250.jpg" alt="Education">
+          <div>
+            <h4>Education access</h4>
+            <p>Why 80% of Deaf children in Uganda still miss out — and what DLU is doing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="involve" id="involved">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-line" style="color:#f6d9d0">Get involved</div>
+      <h2>Three ways to stand with the Deaf community.</h2>
+      <p>DLU builds on partnerships with individuals and organisations in Uganda and abroad. Here's where to start.</p>
+    </div>
+    <div class="involve-grid">
+      <div class="involve-card">
+        <h3>Donate</h3>
+        <p>Support education, livelihoods, and business enterprise programmes directly. [Add your donation/payment link or bank details here.]</p>
+        <a href="#">Give today →</a>
+      </div>
+      <div class="involve-card">
+        <h3>Volunteer or partner</h3>
+        <p>DLU has hosted partners such as the Swedish YMCA/YWCA and Goethe-Zentrum Kampala. If your organisation wants to collaborate, get in touch.</p>
+        <a href="mailto:dlu@deaflinkuganda.org">Email DLU →</a>
+      </div>
+      <div class="involve
